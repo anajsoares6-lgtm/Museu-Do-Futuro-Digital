@@ -1,0 +1,151 @@
+/* Ocorre quando o ponteiro está sobre o elemento */
+a:hover {
+    color: red;
+    background-color: blue;
+    font-family: 80px;
+}
+
+/* "hover" deixa o link do site vermelho, ou de outras formas
+quando se é passado o mouse */
+/* ocorre enquanto o elemento está sendo presionado ou utilizado por algum gatilho*/
+button:active {
+    background-color: gold;
+    font-family: 80px;
+}
+
+/* "active", você ativa algo, um efeito */
+
+/* Ocorre quando o compo está selecionado */
+input:focus {
+    outline: 20px dotted blue;
+}
+
+/* Ocorre quando a caixa está marcada */
+input:checked {
+    accent-color: green;
+}
+
+/* Seleciona o primeiro item da lista */
+li:first-child {
+    color: yellow;
+}
+
+li:nth-child(even){
+    background-color: grey;
+}
+
+li:nth-child(odd){
+    background-color: burlywood;
+}
+
+/* even-par e odd-impar */
+
+/* Seleciona campos obrigatórios */
+input:required{
+    border: 2px solid orange;
+}
+/* Seleciona um e-mail inválido depois que algo foi digitado */
+input[type="email"]:invalid:not(:placeholder-shown){
+    border: 2px solid red;
+}
+
+.caixa{
+    background-color: steelblue;
+    width: 120px;
+    text-align: center;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    animation: mover 2s infinite alternate;
+}
+
+@keyframes mover{
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(100px);
+    }
+}
+
+.palco{
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin-top: 20px;
+    border-bottom: 2px solid black;
+    background-color: rgb(198, 198, 198);
+}
+
+.bola{
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    width: 40px;
+    height: 40px;
+    background-color: tomato;
+    border-radius: 50%;
+    animation: quicar 1s infinite;
+}
+
+@keyframes quicar{
+    0%, 100%{
+        transform: translateY(0) scaleX(1.2) scaleY(0.8);
+    }
+
+    50%{
+        transform: translateY(-100px) scaleX(0.8) scaleY(1.2);
+    }
+}
+
+.sistema{
+  position: relative;
+  width: 250px;
+  height: 250px;
+ margin: 30px;
+background-color: rgb(167, 171, 175);
+}
+
+.sol{
+position: absolute;
+top: 106px;
+left: 106px;
+background-color: orange;
+width: 50px;
+height: 50px;
+border-radius:50%;
+}
+
+.orbita{
+position: absolute;
+top: 30px;
+left: 30px;
+width: 200px;
+height: 200px;
+border: 1px solid gray;
+border-radius: 50%;
+animation: orbitar 5s linear infinite;
+}
+
+.planeta{
+position: absolute;
+top: -12;
+left: 88px;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background-color: royalblue;
+}
+
+
+.sistema:hover .orbita{
+    animation-play-state: paused;
+}
+
+@keyframes orbitar{
+  to{
+transform: rotate(360deg);
+}
+}
